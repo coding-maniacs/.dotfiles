@@ -1,0 +1,20 @@
+{
+  "prefs": {
+    "ShouldDimInactivePanes": "true",
+    "ChangelogVersions": "{\"v0.2024.02.20.08.01.stable_02\":true}",
+    "FontSize": "18.0",
+    "ReceivedReferralTheme": "\"Inactive\"",
+    "DismissedWarpAIWarmWelcome": "true",
+    "AutosuggestionAcceptedCount": "1",
+    "OverrideOpacity": "53",
+    "WelcomeTipsFeaturesUsed": "[{\"Hint\":\"CreateBlock\"},{\"Action\":\"WarpAI\"},{\"Action\":\"SplitPane\"},{\"Action\":\"CommandSearch\"}]",
+    "AIAssistantRequestLimitInfo": "{\"limit\":100,\"num_requests_used_since_refresh\":0,\"next_refresh_time\":\"2024-02-27T12:08:07.990202Z\"}",
+    "FontName": "\"Hack\"",
+    "HonorPS1": "false",
+    "ExperimentId": "225cece3-9793-4d42-96bd-1cda623f8d0c",
+    "HasDismissedWarpDriveWelcome": "true",
+    "Shortcuts": "true",
+    "HasAutoOpenedWelcomeFolder": "true",
+    "Theme": "\"CyberWave\""
+  }
+}
