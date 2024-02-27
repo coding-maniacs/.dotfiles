@@ -1,32 +1,69 @@
 return {
   'ThePrimeagen/harpoon',
+  branch = 'harpoon2',
   dependencies = {
     'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope-ui-select.nvim',
   },
   config = function()
+    -- basic telescope configuration
+    local conf = require('telescope.config').values
+    local function toggle_telescope(harpoon_files)
+      local file_paths = {}
+      for _, item in ipairs(harpoon_files.items) do
+        table.insert(file_paths, item.value)
+      end
+
+      require('telescope.pickers')
+        .new({}, {
+          prompt_title = 'Harpoon',
+          finder = require('telescope.finders').new_table {
+            results = file_paths,
+          },
+          previewer = conf.file_previewer {},
+          sorter = conf.generic_sorter {},
+        })
+        :find()
+    end
+
     local harpoon = require 'harpoon'
     harpoon.setup {
-      save_on_toggle = true,
+      settings = {
+        save_on_toggle = true,
+      },
     }
-    vim.keymap.set('n', '<leader>ha', require('harpoon.mark').add_file)
-    vim.keymap.set('n', '<leader>ht', require('harpoon.ui').toggle_quick_menu)
-    vim.keymap.set('n', '<A-j>', require('harpoon.ui').nav_prev)
-    vim.keymap.set('n', '<A-k>', require('harpoon.ui').nav_next)
+
+    -- Keybindings
+    vim.keymap.set('n', '<leader>ha', function()
+      harpoon:list():append()
+    end)
+
+    vim.keymap.set('n', '<leader>ht', function()
+      toggle_telescope(harpoon:list())
+    end)
+
+    vim.keymap.set('n', '<A-j>', function()
+      harpoon:list():prev()
+    end)
+
+    vim.keymap.set('n', '<A-k>', function()
+      harpoon:list():next()
+    end)
 
     vim.keymap.set('n', '<A-u>', function()
-      require('harpoon.ui').nav_file(1)
+      harpoon:list():select(1)
     end)
 
     vim.keymap.set('n', '<A-i>', function()
-      require('harpoon.ui').nav_file(2)
+      harpoon:list():select(2)
     end)
 
     vim.keymap.set('n', '<A-o>', function()
-      require('harpoon.ui').nav_file(3)
+      harpoon:list():select(3)
     end)
 
     vim.keymap.set('n', '<A-p>', function()
-      require('harpoon.ui').nav_file(2)
+      harpoon:list():select(4)
     end)
   end,
 }
