@@ -42,4 +42,5 @@ vim.o.termguicolors = true
 vim.wo.numberwidth = 4
 vim.wo.relativenumber = true
 
+vim.opt.rtp:append('/home/linuxbrew/.linuxbrew/opt/fzf')
 -- vim: ts=2 sts=2 sw=2 et
