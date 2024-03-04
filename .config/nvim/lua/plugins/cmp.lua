@@ -19,6 +19,7 @@ return {
 
       -- Adds LSP completion capabilities
       'hrsh7th/cmp-nvim-lsp',
+      -- 'hrsh7th/vim-vsnip',
       'hrsh7th/cmp-path',
 
       -- Adds a number of user-friendly snippets
@@ -36,6 +37,7 @@ return {
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
+            -- vim.fn["vsnip#anonymous"](args.body)
           end,
         },
         window = {
@@ -52,7 +54,7 @@ return {
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
           ['<C-Space>'] = cmp.mapping.complete {},
           ['<CR>'] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
+            -- behavior = cmp.ConfirmBehavior.Replace,
             select = true,
           },
           ['<Tab>'] = cmp.mapping(function(fallback)
@@ -78,6 +80,7 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          -- { name = 'vsnip' },
         }, {
           name = "buffer"
         }),
