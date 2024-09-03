@@ -106,6 +106,7 @@ return {
       -- gopls = {},
       pyright = {},
       ruff_lsp = {},
+      tailwindcss = { filetypes =  {'html', 'css'}},
       -- rust_analyzer = {},
       tsserver = {},
       -- html = { filetypes = { 'html', 'twig', 'hbs'} },
