@@ -26,27 +26,27 @@ return {
   --   end,
   -- },
 
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  --   config = function()
-  --     require('kanagawa').setup({
-  --       theme = 'dragon',
-  --       dimInactive = true,
-  --     })
-  --     vim.cmd.colorscheme('kanagawa-wave')
-  --   end
-  -- },
-
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
+    "rebelot/kanagawa.nvim",
     config = function()
-      require("rose-pine").setup({
-        dim_inactive_windows = true,
+      require('kanagawa').setup({
+        theme = 'dragon',
+        dimInactive = true,
       })
-      vim.cmd.colorscheme "rose-pine-main"
+      vim.cmd.colorscheme('kanagawa-wave')
     end
   },
+
+  --{
+  --  "rose-pine/neovim",
+  --  name = "rose-pine",
+  --  config = function()
+  --    require("rose-pine").setup({
+  --      dim_inactive_windows = true,
+  --    })
+  --    vim.cmd.colorscheme "rose-pine-main"
+  --  end
+  --},
 
   {
     -- Set lualine as statusline
