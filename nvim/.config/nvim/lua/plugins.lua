@@ -6,38 +6,43 @@ return {
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
 
-  -- {
-  --   'catppuccin/nvim',
-  --   name = 'catppuccin',
-  --   priority = 1000,
-  --   config = function()
-  --     require('catppuccin').setup {
-  --       flavour = 'mocha',
-  --       background = {
-  --         dark = 'mocha',
-  --       },
-  --       transparent_background = true,
-  --       show_end_of_buffer = true,
-  --       dim_inactive = {
-  --         enabled = true,
-  --       },
-  --     }
-  --     vim.cmd.colorscheme 'catppuccin'
-  --   end,
-  -- },
-
   {
-    "rebelot/kanagawa.nvim",
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    priority = 1000,
     config = function()
-      require('kanagawa').setup({
-        theme = 'dragon',
-        dimInactive = true,
-      })
-      vim.cmd.colorscheme('kanagawa-wave')
-    end
+      require('catppuccin').setup {
+        flavour = 'mocha',
+        background = {
+          dark = 'mocha',
+        },
+        transparent_background = true,
+        show_end_of_buffer = true,
+        dim_inactive = {
+          enabled = true,
+        },
+        styles = {
+          types = { "italic" },
+          keywords = { "italic" },
+          variables = { "italic" }
+        }
+      }
+      vim.cmd.colorscheme 'catppuccin'
+    end,
   },
 
-  --{
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   config = function()
+  --     require('kanagawa').setup({
+  --       theme = 'dragon',
+  --       dimInactive = true,
+  --     })
+  --     vim.cmd.colorscheme('kanagawa-wave')
+  --   end
+  -- },
+
+  --{ 
   --  "rose-pine/neovim",
   --  name = "rose-pine",
   --  config = function()
